@@ -1,5 +1,6 @@
 package cucmberTest;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -12,8 +13,13 @@ public class TestCucumber {
 	@Test
 	public void testLoginAndLogout() throws Exception {
 		driver.get(baseUrl);
-		driver.get("https://mail.google.com");
-		WebElement userName = 
+		driver.get("https://www.gmail.com/");
+		WebElement signIn = driver.findElement(By.xpath("//a[contains(text(),'Sign In')]"));
+		signIn.click();
+		WebElement userName = driver.findElement(By.xpath(".//*[@id='Email']"));
+		WebElement password = driver.findElement(By.xpath(".//*[@id='Passwd']"));
+		WebElement loginButton = driver.findElement(By.xpath(".//*[@id='signIn']"));
+		
 	}
 	
 	
